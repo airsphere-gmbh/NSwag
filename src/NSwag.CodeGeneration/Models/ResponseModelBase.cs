@@ -72,7 +72,7 @@ namespace NSwag.CodeGeneration.Models
                 if (Regex.IsMatch(StatusCode, @"^[xX\d]{3}$"))
                 {
                     var regexBody = StatusCode.ToLower().Replace("x", "\\d");
-                    return $"new System.Text.RegularExpressions.Regex(\"^{regexBody}$\")";
+                    return $"new System.Text.RegularExpressions.Regex(@\"^{regexBody}$\")";
                 }
 
                 // This will make the code non compilable and it is intentional because this StatusCode is not valid
