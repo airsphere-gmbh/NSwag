@@ -397,6 +397,11 @@ namespace MyNamespace
             public string Text { get; }
         }
 
+        private bool StatusInRange(int value, Regex match)
+        {
+            return match.IsMatch(value.ToString());
+        }
+
         public bool ReadResponseAsString { get; set; }
 
         protected virtual async System.Threading.Tasks.Task<ObjectResponseResult<T>> ReadObjectResponseAsync<T>(System.Net.Http.HttpResponseMessage response, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, System.Threading.CancellationToken cancellationToken)
@@ -624,6 +629,11 @@ namespace MyNamespace
             public T Object { get; }
 
             public string Text { get; }
+        }
+
+        private bool StatusInRange(int value, Regex match)
+        {
+            return match.IsMatch(value.ToString());
         }
 
         public bool ReadResponseAsString { get; set; }
