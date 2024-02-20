@@ -469,7 +469,7 @@
         public string Text { get; }
     }
 
-    private bool StatusInRange(int value, Regex match)
+    private bool StatusInRange(int value, System.Text.RegularExpressions.Regex match)
     {
         return match.IsMatch(value.ToString());
     }
